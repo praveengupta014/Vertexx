@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--bg:246 247 244;--surface:255 255 255;--ink:16 35 31;--mut:81 97 92;--line:220 226 222;--brand:15 82 87;--tint:235 239 236;--sig:240 180 41;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:11 21 19;--surface:18 32 29;--ink:234 242 239;--mut:159 178 172;--line:35 54 48;--brand:58 167 174;--tint:15 28 25;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:11 21 19;--surface:18 32 29;--ink:234 242 239;--mut:159 178 172;--line:35 54 48;--brand:58 167 174;--tint:15 28 25;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:rgb(var(--bg));color:rgb(var(--ink));font-family:'Instrument Sans','Segoe UI',sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgb(var(--bg));z-index:60}
+.grain{background-image:radial-gradient(circle at 15% 20%,rgba(240,180,41,.28),transparent 40%),radial-gradient(circle at 85% 10%,rgba(58,167,174,.35),transparent 45%)}
+.gridbg{background-image:linear-gradient(rgb(var(--line)) 1px,transparent 1px),linear-gradient(90deg,rgb(var(--line)) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%)}
+@keyframes float{50%{transform:translateY(-10px)}}
+.float{animation:float 5s ease-in-out infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.marquee{animation:slide 30s linear infinite}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.rise{animation:rise .8s ease both}
+@keyframes grow{from{width:0}}
+.grow{animation:grow 1.2s .3s ease-out both}
+@media (prefers-reduced-motion:reduce){.rise,.grow,.float,.marquee{animation:none}html{scroll-behavior:auto}}

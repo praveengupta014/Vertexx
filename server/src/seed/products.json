@@ -1,0 +1,143 @@
+[
+  {
+    "slug": "audit",
+    "name": "Automation consulting",
+    "type": "Service",
+    "industries": [
+      "Manufacturing",
+      "Retail",
+      "Logistics",
+      "Energy"
+    ],
+    "description": "Audit your operations and map the changes that pay back fastest.",
+    "features": [
+      "Process mapping",
+      "ROI model",
+      "90-day roadmap"
+    ],
+    "priceFromLakh": 6,
+    "leadTimeWeeks": 4
+  },
+  {
+    "slug": "integration",
+    "name": "System integration",
+    "type": "Service",
+    "industries": [
+      "Manufacturing",
+      "Logistics"
+    ],
+    "description": "Connect warehouse, plant and ERP data into one working picture.",
+    "features": [
+      "ERP connectors",
+      "API gateway",
+      "Data cleanup"
+    ],
+    "priceFromLakh": 18,
+    "leadTimeWeeks": 12
+  },
+  {
+    "slug": "managed",
+    "name": "Managed operations",
+    "type": "Service",
+    "industries": [
+      "Manufacturing",
+      "Retail",
+      "Logistics",
+      "Energy"
+    ],
+    "description": "We run and tune your systems so your team can focus on growth.",
+    "features": [
+      "24/7 monitoring",
+      "Monthly tuning",
+      "On-call engineers"
+    ],
+    "priceFromLakh": 12,
+    "leadTimeWeeks": 2
+  },
+  {
+    "slug": "analytics",
+    "name": "Analytics and reporting",
+    "type": "Service",
+    "industries": [
+      "Retail",
+      "Logistics",
+      "Energy"
+    ],
+    "description": "Dashboards that show cost, throughput and risk in plain terms.",
+    "features": [
+      "Live dashboards",
+      "Forecasting",
+      "Board-ready reports"
+    ],
+    "priceFromLakh": 8,
+    "leadTimeWeeks": 6
+  },
+  {
+    "slug": "flow",
+    "name": "Vertexx Flow",
+    "type": "Solution",
+    "industries": [
+      "Retail",
+      "Logistics"
+    ],
+    "description": "Orchestrates robots, conveyors and pickers to cut order cycle time.",
+    "features": [
+      "Robot orchestration",
+      "Pick optimisation",
+      "Up to 38% faster fulfilment"
+    ],
+    "priceFromLakh": 45,
+    "leadTimeWeeks": 16
+  },
+  {
+    "slug": "grid",
+    "name": "Vertexx Grid",
+    "type": "Solution",
+    "industries": [
+      "Manufacturing",
+      "Energy"
+    ],
+    "description": "Tracks and balances power use across plants in real time.",
+    "features": [
+      "Live energy map",
+      "Load balancing",
+      "Typical 17% lower energy cost"
+    ],
+    "priceFromLakh": 38,
+    "leadTimeWeeks": 14
+  },
+  {
+    "slug": "trace",
+    "name": "Vertexx Trace",
+    "type": "Solution",
+    "industries": [
+      "Retail",
+      "Logistics"
+    ],
+    "description": "Follows every shipment and flags delays before customers notice.",
+    "features": [
+      "Shipment tracking",
+      "Delay alerts",
+      "Exceptions found 3 days earlier"
+    ],
+    "priceFromLakh": 28,
+    "leadTimeWeeks": 10
+  },
+  {
+    "slug": "vision",
+    "name": "Vertexx Vision",
+    "type": "Solution",
+    "industries": [
+      "Manufacturing",
+      "Retail"
+    ],
+    "description": "Camera-based quality checks that catch defects on the line.",
+    "features": [
+      "Defect detection",
+      "Line integration",
+      "Audit-ready reports"
+    ],
+    "priceFromLakh": 32,
+    "leadTimeWeeks": 12
+  }
+]

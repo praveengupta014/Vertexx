@@ -31,6 +31,6 @@ export async function connectDB() {
   } catch (err) {
     cached.promise = null;
     console.error('[DB] Connection error:', err.message);
-    return null;
+    throw err;
   }
 }

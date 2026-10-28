@@ -10,10 +10,18 @@ import { notFound, errorHandler } from './middleware.js';
 
 export const app = express();
 app.disable('x-powered-by');
-app.use(cors({ origin: (process.env.CORS_ORIGIN || 'http://localhost:5173').split(',').map((s) => s.trim()) }));
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ limit: '100kb' }));
 
-app.get('/api/health', (req, res) => res.json({ ok: true }));
+const apiInfo = (req, res) => res.json({
+  name: 'Vertexx Automation API',
+  status: 'online',
+  endpoints: ['/api/health', '/api/products', '/api/bookings', '/api/inquiries', '/api/contact', '/api/chat'],
+});
+
+app.get('/', apiInfo);
+app.get('/api', apiInfo);
+app.get('/api/health', (req, res) => res.json({ ok: true, timestamp: new Date().toISOString() }));
 app.use('/api/products', products);
 app.use('/api/bookings', bookings);
 app.use('/api/inquiries', inquiries);

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "cd ../client && npm install && npm run build",
+    "build": "node -e \"console.log('Server ready')\"",
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
     "seed": "node src/seed/seed.js",

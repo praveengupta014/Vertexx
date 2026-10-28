@@ -21,12 +21,12 @@ const apiInfo = (req, res) => res.json({
 
 app.get('/', apiInfo);
 app.get('/api', apiInfo);
-app.get('/api/health', (req, res) => res.json({ ok: true, timestamp: new Date().toISOString() }));
-app.use('/api/products', products);
-app.use('/api/bookings', bookings);
-app.use('/api/inquiries', inquiries);
-app.use('/api/customers', customers);
-app.use('/api/chat', chat);
-app.use('/api/contact', contact);
+app.get(['/health', '/api/health'], (req, res) => res.json({ ok: true, timestamp: new Date().toISOString() }));
+app.use(['/products', '/api/products'], products);
+app.use(['/bookings', '/api/bookings'], bookings);
+app.use(['/inquiries', '/api/inquiries'], inquiries);
+app.use(['/customers', '/api/customers'], customers);
+app.use(['/chat', '/api/chat'], chat);
+app.use(['/contact', '/api/contact'], contact);
 app.use(notFound);
 app.use(errorHandler);

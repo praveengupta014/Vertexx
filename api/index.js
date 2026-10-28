@@ -1,11 +1,15 @@
+import 'dotenv/config';
 import { app } from '../server/src/app.js';
 import { connectDB } from '../server/src/db.js';
 
-export default async function handler(req, res) {
+// Connect DB via middleware before handling requests
+app.use(async (req, res, next) => {
   try {
     await connectDB();
   } catch (err) {
-    console.error('[Vercel Serverless] MongoDB connection error:', err.message);
+    console.error('[Vercel Serverless] DB connection error:', err.message);
   }
-  return app(req, res);
-}
+  next();
+});
+
+export default app;

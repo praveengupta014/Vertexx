@@ -1,11 +1,15 @@
+import 'dotenv/config';
 import { app } from '../src/app.js';
 import { connectDB } from '../src/db.js';
 
-export default async function handler(req, res) {
+// Connect DB via middleware before handling requests
+app.use(async (req, res, next) => {
   try {
     await connectDB();
   } catch (err) {
-    console.error('[Serverless Handler] DB Error:', err.message);
+    console.error('[Vercel Serverless] DB connection error:', err.message);
   }
-  return app(req, res);
-}
+  next();
+});
+
+export default app;

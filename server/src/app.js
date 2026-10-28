@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { connectDB } from './db.js';
 import products from './routes/products.js';
 import bookings from './routes/bookings.js';
 import inquiries from './routes/inquiries.js';
@@ -12,6 +13,16 @@ export const app = express();
 app.disable('x-powered-by');
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ limit: '100kb' }));
+
+// Ensure MongoDB is connected before handling any route
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+  } catch (err) {
+    console.error('[DB] Connection error:', err.message);
+  }
+  next();
+});
 
 const apiInfo = (req, res) => res.json({
   name: 'Vertexx Automation API',

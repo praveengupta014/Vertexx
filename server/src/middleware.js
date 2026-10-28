@@ -27,5 +27,5 @@ export const notFound = (req, res) => res.status(404).json({ error: 'Not found' 
 export const errorHandler = (err, req, res, next) => {
   const status = err.status || (['ValidationError', 'CastError'].includes(err.name) ? 400 : err.code === 11000 ? 409 : 500);
   if (status === 500) console.error(err);
-  res.status(status).json({ error: status === 500 ? 'Server error' : err.message });
+  res.status(status).json({ error: err.message || 'Server error' });
 };

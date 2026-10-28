@@ -18,10 +18,11 @@ app.use(express.json({ limit: '100kb' }));
 app.use(async (req, res, next) => {
   try {
     await connectDB();
+    next();
   } catch (err) {
     console.error('[DB] Connection error:', err.message);
+    next(err);
   }
-  next();
 });
 
 const apiInfo = (req, res) => res.json({

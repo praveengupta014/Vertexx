@@ -9,8 +9,7 @@ if (!cached) {
 export async function connectDB() {
   const uri = process.env.MONGODB_URI;
   if (!uri) {
-    console.warn('[DB] Warning: MONGODB_URI is not set in environment variables.');
-    return null;
+    throw new Error('MONGODB_URI is not set in environment variables');
   }
 
   if (cached.conn && mongoose.connection.readyState === 1) {
